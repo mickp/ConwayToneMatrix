@@ -1,0 +1,60 @@
+<html>
+ <head>
+  <title>
+   Conway's game of life + pentatonic tone matrix
+  </title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    button {
+      width: 26ex;
+      float: None;
+    }
+    #display {
+      float: left;
+      }
+    #buttons {
+      float: left;
+      margin: 1ex;
+      width: 26ex;
+    }
+    #buttons>* {
+      margin: 2pt;
+    }
+    .slider {
+      font-family: sans-serif;
+      font-size: small;
+    }
+    .label {
+      padding-top: 12pt;
+      font-size: small;
+    }
+    #footer {
+      clear: both;
+      padding-top: 18pt;
+    }
+  </style>
+ </head>
+ <body>
+   <div id="top"><h1>Conway's game of life + tone matrix.</h1></div>
+   <div id="display">
+     <canvas id="myCanvas" width="600" height="600"></canvas>
+   </div>
+   <div id="buttons">
+     <button onclick="playPause()">play/pause</button>
+     <button onclick="generate()">generate new</button>
+     <button onclick="getURL()">get URL</button>
+     <div class="label">occupation probability</div>
+     <div class="slider">0<input type="range" id="pOccupied" min="0" max="1" value="0.3" step="0.05" oninput="updateValue(this)" onchange="updateValue(this)">1</div>
+     <div class="label">iterate on</div>
+     <div class="slider">1<input type="range" id="beatsPerCycle" min="1" max="16" value="4" step="1" oninput="updateValue(this)" onchange="updateValue(this)">16</div>
+     <div class="label">BPM</div>
+     <div class="slider">80 <input type="range" id="bpm" min="80" max="400" value="200" step="2" oninput="updateValue(this)" onchange="updateValue(this)">400</div>
+   </div>
+   <div id="footer">
+	<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">Conway's game of life + tone matrix</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/mickp/toneMatrixLife" property="cc:attributionName" rel="cc:attributionURL">Mick Phillips</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+	</div>
+ </body>
+ <script type="text/javascript" src="ConwayToneMatrix.js"></script>
+</html>
